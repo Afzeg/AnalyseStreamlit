@@ -1,6 +1,6 @@
 import os
 print(os.getcwd())
-
+print(os.system("ls"))
 
 import streamlit as st
 from src.Views import login, home, dataset, analysis, conclusion
