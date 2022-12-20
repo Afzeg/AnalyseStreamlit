@@ -1,9 +1,15 @@
+import os
+print(os.getcwdb())
+
+
 import streamlit as st
 from src.Views import login, home, dataset, analysis, conclusion
 from src.router import redirect, get_route
 from src.Controllers.auth import open_access, logout
 import os
 import utils as utl
+
+
 
 st.set_page_config(layout="wide", page_title='Rapport du bonheur dans le monde')
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -48,4 +54,4 @@ def navigation():
 
 navigation()
 
-print(os.getcwd())
+
