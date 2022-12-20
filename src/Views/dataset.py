@@ -3,8 +3,8 @@ import pandas as pd
 
 
 def open_csv():
-    a = pd.read_csv("src\Views\component\dataset\happiness2021.csv")
-    b = pd.read_csv("src\Views\component\dataset\world-happiness-report.csv")
+    a = pd.read_csv("src/Views/component/dataset/happiness2021.csv")
+    b = pd.read_csv("src/Views/component/dataset/world-happiness-report.csv")
     return [a, b]
 
 def dataset_page():
