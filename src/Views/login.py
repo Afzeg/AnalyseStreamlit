@@ -16,7 +16,7 @@ def login_page():
     
     
         with col1:
-            st.image("src\Views\component\object\smiley-2979107_1920.jpg")
+            st.image("src/Views/component/object/smiley-2979107_1920.jpg")
 
         with col2:
             mail = st.text_input(label="Identifiant", placeholder="Entrer votre email", help="Votre email doit être au format dupont@mail.fr.")
@@ -44,7 +44,7 @@ def signin_page():
         col1, col2 = st.columns(2)
 
         with col1:
-            st.image("src\Views\component\object\pexels-pixabay-207983.jpg")
+            st.image("src/Views/component/object/pexels-pixabay-207983.jpg")
         
         with col2:
         
