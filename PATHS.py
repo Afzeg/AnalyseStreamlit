@@ -3,7 +3,11 @@ NAVBAR_PATHS = {
     'JEU DE DONNEES': 'dataset',
     'ANALYSE': 'analysis',
     'CONCLUSION': 'conclusion',
+    'DECONNEXION': 'logout'
 }
+
+"""
 SETTINGS = {
     'DECONNEXION':'/logout'
 }
+"""

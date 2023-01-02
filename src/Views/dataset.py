@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import utils as utl
 
 
 def open_csv():
@@ -94,4 +95,15 @@ def dataset_page():
         """)
 
 
-        
+def load_dataset():
+    col1, col2, col3 = st.columns([1,5,1])
+
+    with col1:
+        st.empty()
+    with col2:
+        utl.inject_custom_css()
+        utl.navbar_component()
+        dataset_page()
+    with col3:
+        st.empty()
+

@@ -1,16 +1,13 @@
 import streamlit as st
 import base64
+import utils as utl
 
 
 def conclusion_page():
 
+    st.subheader("Conclusions :")
 
-    col1, col2 = st.columns(2)
-    
-    with col2:
-        st.subheader("Conclusions :")
-
-        st.markdown("""
+    st.markdown("""
     Nous avons vu qu'il y a pas mal de distinctions entre les pays heureux et malheureux, du moins aux extrêmes.\n
     Généralement, les populations des pays heureux ont tendance à :
     - être plus riche
@@ -24,3 +21,15 @@ def conclusion_page():
     le score du bonheur montait au cours des années, il y a encore du chemin, mais les pays les moins heureux peuvent briser cette tendance et offrir à leurs habitants une meilleure vie qui entrainera une hausse de leur bonheur.
     """)
 
+def load_conclusion():   
+
+    col1, col2, col3 = st.columns([1, 5, 1])
+
+    with col1:
+        st.empty()
+    with col2:
+        utl.inject_custom_css()
+        utl.navbar_component()
+        conclusion_page()
+    with col3:
+        st.empty()

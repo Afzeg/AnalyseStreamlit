@@ -1,6 +1,6 @@
 .navbar{
     font-family: 'Trebuchet MS', sans-serif;
-    position: fixed;
+    position: static;
     width: 100%;
     background: #e0ba80;
     z-index: 99999999999999999999;

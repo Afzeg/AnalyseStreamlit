@@ -24,3 +24,5 @@ a = d.execute("INSERT INTO users(mail, password) VALUES ('erwan@mail.fr', '12345
 print(a)
 """
 
+db = Database()
+print(db.execute("SELECT * FROM users").fetchall())
