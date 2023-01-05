@@ -272,6 +272,24 @@ def page4():
     On peut voir une tendance, plus le score de support social est haut plus le score du bonheur augmente. Ce qui montre que dans les pays moins heureux, la présence de proches est de plus en plus faible
     """)
 
+def tab():
+
+    tab1, tab2, tab3, tab4 = st.tabs(["Les plus ou moins heureux", "L'Europe contre le monde",
+"Le reste du monde", "Le lien entre tout ces critères"])
+
+    with tab1:
+        page1()
+    
+    with tab2:
+        page2()
+    
+    with tab3:
+        page3()
+    
+    with tab4:
+        page4()
+
+"""
 def summary():
     summary = st.sidebar.radio("Sommaire", ("Quels sont les pays les plus et les moins heureux du monde ?", "Quelles sont les différences entre l'Europe occidentale et le reste du monde ?", 
     "Que se passe-t-il dans le reste du monde ?", "Existe-t-il des liens entre ces critères ?"))
@@ -287,7 +305,7 @@ def summary():
 
     else:
         analysis_page(4)
-    
+"""  
 
 
 def load_analysis():   
@@ -299,7 +317,7 @@ def load_analysis():
     with col2:
         utl.inject_custom_css()
         utl.navbar_component()
-        summary()
+        tab()
     with col3:
         st.empty()
 

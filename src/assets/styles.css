@@ -1,6 +1,6 @@
 .navbar{
     font-family: 'Trebuchet MS', sans-serif;
-    position: static;
+    position: relative;
     width: 100%;
     background: #e0ba80;
     z-index: 99999999999999999999;
@@ -11,7 +11,7 @@
 
 .navitem{
     float: left;
-    display: block;
+    display: flex;
     color: #000000 !important;
     text-align: center;
     padding: 20px 20px;
@@ -96,4 +96,45 @@
 
 iframe{
     height: 0rem;
+}
+
+label, #toggle
+{
+display: none;
+}
+
+@media all and (max-width: 991px)
+{
+.navbar
+{
+    height: 60px;
+}
+
+nav .navlist
+{
+display: none;
+flex-direction: column;
+background: #e0ba80;
+height: 314px;
+}
+
+nav .navlist a {
+width: 50%;
+}
+
+label 
+{
+width: 30px;
+display: flex;
+position: absolute;
+margin: 0 auto;
+right: 0;
+font-size: 30px;
+color: rgb(0, 0, 0);
+cursor: pointer;
+}
+
+#toggle:checked + .navlist {
+display: flex;
+}
 }

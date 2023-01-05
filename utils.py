@@ -11,14 +11,18 @@ def navbar_component():
     #with open("src/assets/images/settings.png", "rb") as image_file:
     #    image_as_base64 = base64.b64encode(image_file.read())
     
-    navbar_items = ''
-    for key, value in NAVBAR_PATHS.items():
-        navbar_items += (f'<a class="navitem" href="/?nav=%2F{value}">{key}</a>')
+
     
     component = rf'''
             <nav class="container navbar" id="navbar">
+                <label for="toggle">☰</label>
+                <input type="checkbox" id="toggle">
                 <ul class="navlist">
-                {navbar_items}
+                    <a class="navitem" href="/?nav=%2Fhome">ACCUEIL</a>
+                    <a class="navitem" href="/?nav=%2Fdataset">JEU DE DONNEES</a>
+                    <a class="navitem" href="/?nav=%2Fanalysis">ANALYSE</a>
+                    <a class="navitem" href="/?nav=%2Fconclusion">CONCLUSION</a>
+                    <a class="navitem" href="/?nav=%2Flogout">DECONNEXION</a>
                 </ul>
             </nav>
             '''
@@ -59,3 +63,23 @@ def navbar_component():
     '''
     html(js)
 
+    #<label for="toggle">☰</label>
+    #<input type="checkbox" id="toggle">
+
+
+"""
+    navbar_items = ''
+    for key, value in NAVBAR_PATHS.items():
+        navbar_items += (f'''
+        <a class="navitem" href="/?nav=%2F{value}">{key}</a>''')
+    
+    component = rf'''
+            <nav class="container navbar" id="navbar">
+                <label for="toggle">☰</label>
+                <input type="checkbox" id="toggle">
+                <ul class="navlist">
+                    {navbar_items}
+                </ul>
+            </nav>
+            '''
+"""
