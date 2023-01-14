@@ -6,9 +6,9 @@ class Database:
         self.execute = self.db.execute
         self.commit = self.db.commit
 
-    def setup(self):    
+    def setup(self, mail, password):    
         self.execute("CREATE TABLE users (uid INTEGER PRIMARY KEY, mail VARCHAR, password VARCHAR)")
-        self.execute("INSERT INTO users (mail, password) VALUES ('erwan@mail.fr', '932a8e294c3c14a0f47ad4df4890bf25b034038ba88fe9fddf4b727076cc12ef')")
+        self.execute(f"INSERT INTO users (mail, password) VALUES ('{mail}', '{password}')")
         self.commit()
 
     def drop(self):     #supprime la table
@@ -16,13 +16,3 @@ class Database:
 
 
 
-#db = Database().setup()
-
-"""
-d.execute("CREATE TABLE users (uid INTEGER PRIMARY KEY UNIQUE, mail VARCHAR, password VARCHAR)")
-a = d.execute("INSERT INTO users(mail, password) VALUES ('erwan@mail.fr', '123456789')").fetchall()
-print(a)
-"""
-
-db = Database()
-print(db.execute("SELECT * FROM users").fetchall())

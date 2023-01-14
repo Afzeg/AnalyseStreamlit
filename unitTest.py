@@ -3,13 +3,7 @@ from src.Models.database import Database
 from src.Controllers.auth import login, signin
 
 class UnitTest(unittest.TestCase):
-    """
-    def test_azerty(self):
-        a="azerty"
-        b="AZERTY"
-        b=b.lower()
-        self.assertEqual(a, b, "le test azerty n'a pas fonctionné")
-    """
+
 
     def test_query(self):
         d = Database()
@@ -18,7 +12,7 @@ class UnitTest(unittest.TestCase):
         a = d.execute("Select * from users").fetchall()
         print(a)
         self.assertTrue(a[0][1]=='erwan@mail.fr')
-        self.assertTrue(a[0][2]=='b475e159b81477ac64accabe4514b50768e064abdfdc40529373dbab984b0b82')
+        self.assertTrue(a[0][2]=='932a8e294c3c14a0f47ad4df4890bf25b034038ba88fe9fddf4b727076cc12ef')
 
 if __name__ == "__main__":
     unittest.main()

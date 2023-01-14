@@ -22,11 +22,11 @@ def valid_password(password):
     else:
         return False
 
-def login(mail, mdp):  #vérifie si le mail et le mdp sont dans la base de donnée users
+def login(mail, password):  #vérifie si le mail et le mdp sont dans la base de donnée users
     
     db = Database()
-    mdp = sha256(str(mdp).encode(encoding="utf-32")).hexdigest()
-    res = db.execute("SELECT * FROM users WHERE mail= (?) AND password= (?)", (mail, mdp)).fetchone()
+    password = sha256(str(password).encode(encoding="utf-32")).hexdigest()
+    res = db.execute("SELECT * FROM users WHERE mail= (?) AND password= (?)", (mail, password)).fetchone()
     
     """
     a = set(db.execute(f"SELECT uid FROM users WHERE mail='{email}'").fetchall())
@@ -34,7 +34,6 @@ def login(mail, mdp):  #vérifie si le mail et le mdp sont dans la base de donn�
 
     res = a.intersection(b)
     """
-    #print(res)
   
     if res != None:
         cook = Cookie()

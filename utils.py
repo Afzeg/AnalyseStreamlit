@@ -8,10 +8,6 @@ def inject_custom_css():
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 def navbar_component():
-    #with open("src/assets/images/settings.png", "rb") as image_file:
-    #    image_as_base64 = base64.b64encode(image_file.read())
-    
-
     
     component = rf'''
             <nav class="container navbar" id="navbar">
@@ -62,24 +58,3 @@ def navbar_component():
     </script>
     '''
     html(js)
-
-    #<label for="toggle">☰</label>
-    #<input type="checkbox" id="toggle">
-
-
-"""
-    navbar_items = ''
-    for key, value in NAVBAR_PATHS.items():
-        navbar_items += (f'''
-        <a class="navitem" href="/?nav=%2F{value}">{key}</a>''')
-    
-    component = rf'''
-            <nav class="container navbar" id="navbar">
-                <label for="toggle">☰</label>
-                <input type="checkbox" id="toggle">
-                <ul class="navlist">
-                    {navbar_items}
-                </ul>
-            </nav>
-            '''
-"""

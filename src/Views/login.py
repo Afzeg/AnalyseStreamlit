@@ -28,7 +28,7 @@ def signin_page():
                 st.text("Mail invalide")
             elif not valid_password(password):
                 st.text("Mot de passe invalide")
-            elif not password == valid_password:
+            elif not password == confirm_password:
                 st.text("Mot de passe incorrect")
 
                 
@@ -51,8 +51,10 @@ def login_page():
                 else: #si mail et mdp inexistant -> pas de connection
                     print(login(mail, password))
                     st.text("Erreur de connexion")
-            else:
-                st.text("Mail invalide") #si le mail est pas valide 
+            elif not valid_mail:
+                st.text("Mail invalide") #si le mail n'est pas valide 
+            elif not valid_password:
+                st.text("Mot de passe invalide") #si le mdp n'est pas valide
         
 def load_log():
 

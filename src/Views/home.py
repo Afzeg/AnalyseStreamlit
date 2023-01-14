@@ -17,7 +17,7 @@ def home_page():
     Je m'appelle **Erwan Salesse**, j'ai 26 ans. J'ai passé 3 années à l'université de La Garde en Physique-Chimie suivi de 5 ans de travail dans la logistique.
     
     J'ai créé ce site pour cloturer ma formation de **Data Analyst** effectuée avec l'organisme de formation **DATAROCKSTARS** et valider ma certification de **concepteur développeur 
-    d'application**. Je me suis lancé dans cette formation afin d'acquérir de nouvelles compétences dans un domaine en plein expansion.
+    d'application**. Je me suis lancé dans cette formation afin d'acquérir de nouvelles compétences dans un domaine en pleine expansion.
     """)
 
     st.subheader("Quel est ce site ?")
@@ -37,13 +37,31 @@ def home_page():
 
     st.subheader("Pourquoi ce thème ?")
     st.markdown("""
-    En cherchant un sujet pour mon projet, je suis tombé sur une liste de dataset représentant le classement de pays par le bonheur. 
+    En cherchant un sujet pour mon projet, je suis tombé sur une liste de dataset représentant le classement des pays par le bonheur. 
     
     La première question que je me suis posé en voyant ça c'était comment on pouvait définir le bonheur d'un pays. Sur quels critères cette étude se base pour définir si 
-    quelqu'un est heureux ou non ?
+    quelqu'un est heureux ou non.
     
     Et donc je me suis lancé dans une analyse du rapport du bonheur sur l'année 2021 pour répondre à ma curiosité.
     """)
+
+
+    st.subheader("Quels sont les outils utilisés ?")
+
+
+    
+    tab1, tab2, tab3 = st.tabs(["Python", "Seaborn", "Matplotlib"])
+    
+    with tab1:
+        st.image("src/Views/component/object/logo/python_logo.png")
+        st.markdown("")
+
+    with tab2:
+        st.image("src/Views/component/object/logo/seaborn_logo.png")
+
+    with tab3:
+        st.image("src/Views/component/object/logo\matplotlib_logo.png")
+    
 
 
     #if open_access():

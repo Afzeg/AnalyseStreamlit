@@ -12,17 +12,9 @@ df2 = open_csv()[1]
 df2.drop(1310, axis=0, inplace=True)
 
 
-def analysis_page(page):
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-    if page == 1:
-        page1()
-    elif page == 2:
-        page2()
-    elif page == 3:
-        page3()
-    else:
-        page4()
-    
+
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 
 def page1():
     st.title("**Quels sont les pays les plus et les moins heureux du monde ?**")
@@ -315,6 +307,7 @@ def load_analysis():
     with col1:
         st.empty()
     with col2:
+        st.image("src/Views/component/object/happiness-2901750_1920.png")
         utl.inject_custom_css()
         utl.navbar_component()
         tab()

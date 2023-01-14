@@ -101,6 +101,7 @@ def load_dataset():
     with col1:
         st.empty()
     with col2:
+        st.image("src/Views/component/object/happiness-2901750_1920.png")
         utl.inject_custom_css()
         utl.navbar_component()
         dataset_page()
