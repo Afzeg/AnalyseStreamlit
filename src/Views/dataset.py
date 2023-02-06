@@ -23,17 +23,6 @@ def dataset_page():
 
         st.markdown("""
         Ce dataset contient le score de bonheur, sur l'année 2021, de 149 pays ainsi que les facteurs utilisés pour exprimer le bonheur. 
-        
-        Projet de recherche sur plus de 140 pays qui représentent à peu près 95% de la population mondiale adulte (5 milliards). Dans la plupart des pays étudiés, 1000 questionnaires ont été complété par un échantillon représentatif d’individu vivant à travers leur pays. La couverture se fait à travers tout le pays, zones rurales incluses. 
-
-        La base de sondage représente l'ensemble de la population civile, non institutionnalisée, âgée de 15 ans et plus,  du pays.
-
-        Dans les grands pays comme la Chine et la Russie, les sondages se sont faits sur un échantillon de 2000 individus quant aux pays plus petits, cela s’est fait sur un échantillon de 500 à 1000 individus, mais ça reste le même échantillon représentatif pour chaque pays.
-
-        Les enquêtes ont été faites par téléphone ou en face à face suivant la couverture téléphonique du pays.
-
-        Il y a une marge d’erreur dans les résultats de chaque pays qui a été calculé par Gallup autour d’une proportion de 95% du niveau de confidence.
-
         """)
 
         expander = st.expander("Voir la description des variables :")

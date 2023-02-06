@@ -14,5 +14,3 @@ class Database:
     def drop(self):     #supprime la table
         self.execute("DROP TABLE IF EXISTS users")
 
-
-

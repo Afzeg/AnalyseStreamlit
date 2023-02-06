@@ -1,4 +1,3 @@
-
 from src.Models.cookie import Cookie
 from src.Models.database import Database
 import re   #regular expressions
@@ -14,7 +13,7 @@ def valid_mail(mail):  #vérifie si le mail correspond bien aux normes qu'on dem
         return False
 
 def valid_password(password):
-    regul = re.compile(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")
+    regul = re.compile(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*]).{8,}$")
     re.fullmatch(regul, password)
 
     if re.fullmatch(regul, password):
@@ -27,13 +26,6 @@ def login(mail, password):  #vérifie si le mail et le mdp sont dans la base de 
     db = Database()
     password = sha256(str(password).encode(encoding="utf-32")).hexdigest()
     res = db.execute("SELECT * FROM users WHERE mail= (?) AND password= (?)", (mail, password)).fetchone()
-    
-    """
-    a = set(db.execute(f"SELECT uid FROM users WHERE mail='{email}'").fetchall())
-    b = set(db.execute("SELECT uid FROM users WHERE password='{mdp}'").fetchall())
-
-    res = a.intersection(b)
-    """
   
     if res != None:
         cook = Cookie()
@@ -55,15 +47,15 @@ def logout():
     cook.clean({"uid":"", "mail":""})
 
 def mail_exist(mail):
-    db = Database()
-    if db.execute(f"SELECT mail FROM users where mail ='{mail}'").fetchone() == None:
+    db = Database() #se connecte à la base de données
+    if db.execute(f"SELECT mail FROM users where mail ='{mail}'").fetchone() == None: #cherche dans la table users si le mail existe
         return True
     else:
         return False
 
-def signin(mail, mdp):
-    db = Database()
-    mdp = sha256(str(mdp).encode(encoding="utf-32")).hexdigest() 
-    db.execute(f"INSERT INTO users (mail, password) VALUES ('{mail}','{mdp}')")
+def signin(mail, password):
+    db = Database() #se connecter à la base de données
+    password = sha256(str(password).encode(encoding="utf-32")).hexdigest() #hache le mot de passe
+    db.execute(f"INSERT INTO users (mail, password) VALUES ('{mail}','{password}')") #l'ajoute à la table users
     db.commit()
 

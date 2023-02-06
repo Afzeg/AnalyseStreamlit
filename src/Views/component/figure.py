@@ -24,18 +24,24 @@ def ranking_country():
 
 
 def top10_happy():
-    fig = plt.figure(figsize=(7,5))
+    
+    fig = plt.figure(figsize=(6,4))
+    
     ax = sns.barplot(data=df.head(10), y="Country_name", x="Ladder_score", hue="Regional_indicator", dodge = False)
+    
     plt.title("Top 10 des pays les plus heureux en 2021")
+    
     ax.set(xlabel="Score du bonheur", ylabel=None)
+    
     i = ax.legend(loc="upper left", bbox_to_anchor=(1,1))
     i.get_texts()[0].set_text("Europe occidentale")
     i.get_texts()[1].set_text("Amérique du Nord, Australie et Nouvelle-Zélande")
+    
     st.pyplot(fig)
 
 
 def top10_unhappiness():
-    fig = plt.figure(figsize=(7,5))
+    fig = plt.figure(figsize=(5,3))
     ax = sns.barplot(data=df.iloc[-10:], y="Country_name", x="Ladder_score", hue="Regional_indicator", dodge = False)
     plt.title("Top 10 des pays les moins heureux en 2021")
     ax.set(xlabel="Score du bonheur", ylabel=None)

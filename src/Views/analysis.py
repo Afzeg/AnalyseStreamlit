@@ -59,14 +59,14 @@ def page1():
         for country in top_20["Country name"]:
             mean_country = df2[df2['Country name'] == country].groupby('Country name')['Life Ladder'].mean()
     
-            hist = sns.scatterplot(data=df2[df2['Country name'] == country], y=a, x='Life Ladder', color="gray")
+            hist = sns.scatterplot(data=df2[df2['Country name'] == country], y=a, x='Life Ladder', color="gray") #place un point gris pour chaque année
     
-            m = sns.scatterplot(data=df2[df2['Country name'] == country], y=a, x=mean_country, color="blue", s=75)
+            m = sns.scatterplot(data=df2[df2['Country name'] == country], y=a, x=mean_country, color="blue", s=75) #point bleu pour la moyenne de tout les scores
 
             if year == 2021:
-                actual = sns.scatterplot(data=df[df['Country name'] == country], y=a, x='Ladder score', color="red", s=75)
+                actual = sns.scatterplot(data=df[df['Country name'] == country], y=a, x='Ladder score', color="red", s=75) #si année=2021, prend la donnée de le 1er dataset
             else:    
-                actual = sns.scatterplot(data=df2[(df2['Country name'] == country) & (df2['year']==year)], y=a, x='Life Ladder', color="red", s=75)
+                actual = sns.scatterplot(data=df2[(df2['Country name'] == country) & (df2['year']==year)], y=a, x='Life Ladder', color="red", s=75) #sinon prend la donnée de l'année dans le 2ème dataset
             a+=1
 
         #définition des labels de l'axe y, index de top_20 puis les labels 

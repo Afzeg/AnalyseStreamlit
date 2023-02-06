@@ -1,5 +1,4 @@
-.navbar{
-    font-family: 'Trebuchet MS', sans-serif;
+.navbar{   
     position: relative;
     width: 100%;
     background: #e0ba80;
@@ -98,16 +97,15 @@ iframe{
     height: 0rem;
 }
 
-label, #toggle
-{
-display: none;
+label, #toggle{
+    display: none;
 }
 
 @media all and (max-width: 991px)
 {
 .navbar
 {
-    height: 60px;
+height: 50px;
 }
 
 nav .navlist
@@ -118,17 +116,18 @@ background: #e0ba80;
 height: 314px;
 }
 
-nav .navlist a {
+nav .navlist a
+{
 width: 50%;
 }
 
-label 
+label
 {
 width: 30px;
 display: flex;
-position: absolute;
+justify-content: center;
+align-items: center;
 margin: 0 auto;
-right: 0;
 font-size: 30px;
 color: rgb(0, 0, 0);
 cursor: pointer;
@@ -138,3 +137,4 @@ cursor: pointer;
 display: flex;
 }
 }
+

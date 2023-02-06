@@ -61,16 +61,6 @@ def home_page():
 
     with tab3:
         st.image("src/Views/component/object/logo\matplotlib_logo.png")
-    
-
-
-    #if open_access():
-    #    st.markdown("Pour pouvoir accéder à l'analyse, veuillez vous connecter.")
-    #    if st.button("Se connecter"):
-    #        redirect("/login", reload=True)
-
-    #    if st.button("S'inscrire"):
-    #        redirect("/signin", reload=True)
 
 
 def load_home():
