@@ -1,6 +1,6 @@
 import sqlite3 
 
-class Database:
+class User:
     def __init__(self):
         self.db = sqlite3.connect("projet.db")
         self.execute = self.db.execute

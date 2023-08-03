@@ -42,7 +42,7 @@ def page1():
     with st.container():
 
         # création du slider pour choisir l'année
-        year = st.select_slider("Choisissez une année", options = list_year + [2021])
+        year = st.select_slider("", options = list_year + [2021])
         
         st.write("""
         Les points gris réprésentent les scores des autres années.\n

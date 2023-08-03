@@ -1,12 +1,12 @@
 import unittest
-from src.Models.database import Database
+from src.Models.database import User
 from src.Controllers.auth import login, signin
 
 class UnitTest(unittest.TestCase):
 
 
     def test_query(self):
-        d = Database()
+        d = User()
         d.drop()
         d.setup("mail", "password")
         a = d.execute("Select * from users").fetchall()

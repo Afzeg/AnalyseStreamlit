@@ -86,7 +86,6 @@ def dataset_page():
 
 def load_dataset():
     col1, col2, col3 = st.columns([1,5,1])
-
     with col1:
         st.empty()
     with col2:
