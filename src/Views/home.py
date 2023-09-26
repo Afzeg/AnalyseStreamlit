@@ -60,7 +60,7 @@ def home_page():
         st.image("src/Views/component/object/logo/seaborn_logo.png")
 
     with tab3:
-        st.image("src/Views/component/object/logo\matplotlib_logo.png")
+        ()
 
 
 def load_home():
